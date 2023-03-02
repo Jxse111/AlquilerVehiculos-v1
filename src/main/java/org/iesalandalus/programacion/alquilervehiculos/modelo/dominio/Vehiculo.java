@@ -48,10 +48,7 @@ public class Vehiculo {
 	}
 
 	public boolean equals(Object o) {
-		if (this == o)
-			return true;
-		if (o == null || getClass() != o.getClass())
-			return false;
+		if (Object instanceof o);
 	
 		Turismo turismo = (Turismo) o;
 	
