@@ -13,12 +13,28 @@ public abstract class Vehiculo {
 	public static Turismo getTurismoConMatricula(String matricula) {
 		return new Turismo("Seat", "León", 90, matricula);
 	}
+	protected String Vehiculo() {
+		return "Vehiculo [marca=" + marca + ", modelo=" + modelo + ", matricula=" + matricula + "]";
+	}
 
+	protected Vehiculo(Vehiculo Vehiculo) {
+	}
+	public void copiar(Vehiculo Vehiculo) {
+	this.marca = Vehiculo.marca;
+	this.matricula = Vehiculo.matricula;
+	this.modelo = Vehiculo.modelo;
+	}
+	
+	public  String getVehiculoConMatricula() {
+		return Vehiculo.ER_MATRICULA;
+	}
+	public abstract void getFactorPrecio();
+	
 	public String getMarca() {
 		return marca;
 	}
 
-	public void setMarca(String marca) throws IllegalArgumentException {
+	private void setMarca(String marca) throws IllegalArgumentException {
 		if (marca == null) {
 			throw new NullPointerException("ERROR: la marca no puede ser nula.");
 		}
@@ -29,7 +45,7 @@ public abstract class Vehiculo {
 		return modelo;
 	}
 
-	public void setModelo(String modelo) throws IllegalArgumentException {
+	private void setModelo(String modelo) throws IllegalArgumentException {
 		if (modelo != null && !modelo.isBlank()) {
 			this.modelo = modelo;
 		}
@@ -49,8 +65,6 @@ public abstract class Vehiculo {
 		throw new IllegalArgumentException("Matrícula no tiene un formato válido");
 	}
 
-	public abstract double getFactorPrecio();
-
 	@Override
 	public int hashCode() {
 		return Objects.hash(marca, matricula, modelo);
@@ -67,7 +81,7 @@ public abstract class Vehiculo {
 				&& Objects.equals(modelo, other.modelo);
 	}
 
-	public Vehiculo() {
+	public Vehiculo(String marca2, String modelo2, String matricula2) {
 		super();
 	}
 
