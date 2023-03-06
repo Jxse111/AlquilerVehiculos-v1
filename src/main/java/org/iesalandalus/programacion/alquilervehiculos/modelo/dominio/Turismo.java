@@ -31,11 +31,12 @@ public abstract class Turismo extends Vehiculo {
 		}
 	}
 
+	@Override
 	public String toString() {
-		return "Turismo [cilindrada=" + cilindrada + ", getMarca()=" + getMarca() + ", getModelo()=" + getModelo() + ", getCilindrada()="
-				+ getCilindrada() + ", getMatricula()=" + getMatricula() + ", hashCode()=" + hashCode()
-				+ ", getPrecioDiario()=" + getPrecioDiario() + ", getClass()=" + getClass() + ", toString()="
-				+ super.toString() + "]";
+		return "Turismo [cilindrada=" + cilindrada + ", getCilindrada()=" + getCilindrada() + ", getPrecioDiario()="
+				+ getPrecioDiario() + ", getMarca()=" + getMarca() + ", getModelo()=" + getModelo()
+				+ ", getFactorPrecio()=" + getFactorPrecio() + ", hashCode()=" + hashCode() + ", getPlazas()="
+				+ getPlazas() + ", getClass()=" + getClass() + ", toString()=" + super.toString() + "]";
 	}
 
 	public int getPrecioDiario() {

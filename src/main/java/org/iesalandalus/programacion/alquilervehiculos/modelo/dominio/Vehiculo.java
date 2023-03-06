@@ -9,29 +9,36 @@ public abstract class Vehiculo extends Autobus {
 	private String modelo;
 	private String matricula;
 
-	public Vehiculo(String marca, String modelo, int plazas, String matricula) {
+	protected Vehiculo(String marca, String modelo, int plazas, String matricula) {
 		super(marca, modelo, plazas, matricula);
 	}
 
-	public static Turismo getTurismoConMatricula(String matricula) {
+	protected Vehiculo(Vehiculo vehiculo) {
+	}
+
+	public abstract void copiar(Vehiculo vehiculo);
+
+	protected static Turismo getTurismoConMatricula(String matricula) {
 		return new Turismo("Seat", "León", 90, matricula);
 	}
 
+	public abstract int getFactorPrecio();
+
 	public String getMarca() {
 		return marca;
-		}
-	public void setMarca() {	
+	}
+
+	public void setMarca() {
 		if (marca == null) {
 			throw new NullPointerException("ERROR: la marca no puede ser nula.");
-			}
 		}
+	}
 
 	public String getModelo() {
 		return modelo;
-	
+
 	}
-	
-	
+
 	public void setModelo(String matricula) throws IllegalArgumentException {
 		throw new IllegalArgumentException("Matrícula no tiene un formato válido");
 
@@ -40,8 +47,6 @@ public abstract class Vehiculo extends Autobus {
 	public void setMatricula(String matricula) throws IllegalArgumentException {
 		throw new IllegalArgumentException("Matrícula no tiene un formato válido");
 	}
-
-	public abstract int getFactorPrecio();
 
 	@Override
 	public int hashCode() {

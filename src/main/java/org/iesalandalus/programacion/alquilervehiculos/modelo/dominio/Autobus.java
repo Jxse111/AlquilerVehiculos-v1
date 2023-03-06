@@ -20,4 +20,11 @@ public int getFactorPrecio() {
 return FACTOR_PLAZAS/plazas;
 
 }
+
+@Override
+public String toString() {
+	return "Autobus [FACTOR_PLAZAS=" + FACTOR_PLAZAS + ", plazas=" + plazas + ", getPlazas()=" + getPlazas()
+			+ ", getFactorPrecio()=" + getFactorPrecio() + ", getClass()=" + getClass() + ", hashCode()=" + hashCode()
+			+ ", toString()=" + super.toString() + "]";
+}
 }
