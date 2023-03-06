@@ -5,8 +5,8 @@ import java.util.List;
 
 import javax.naming.OperationNotSupportedException;
 
+import org.iesalandalus.programacion.alquilervehiculos.modelo.dominio.Autobus;
 import org.iesalandalus.programacion.alquilervehiculos.modelo.dominio.Turismo;
-import org.iesalandalus.programacion.alquilervehiculos.modelo.dominio.Vehiculo;
 
 public class Turismos {
 
@@ -26,7 +26,7 @@ public class Turismos {
 	public int getCantidad() {
 
 		int cantidadElementos = 0;
-		for (Vehiculo turismos : coleccionTurismo) {
+		for (Autobus turismos : coleccionTurismo) {
 
 			cantidadElementos++;
 		}
@@ -60,7 +60,7 @@ public class Turismos {
 
 	}
 
-	public void borrar(Vehiculo turismo) throws OperationNotSupportedException {
+	public void borrar(Autobus turismo) throws OperationNotSupportedException {
 
 		if (turismo == null) {
 			throw new NullPointerException("ERROR: No se puede borrar un turismo nulo.");

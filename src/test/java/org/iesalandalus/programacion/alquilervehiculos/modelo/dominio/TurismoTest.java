@@ -135,12 +135,12 @@ public class TurismoTest {
 	
 	@Test
 	void equalsYHasCodeConsistentes() {
-		Vehiculo turismoIgual = Turismo.getVehiculoConMatricula(MATRICULA_VALIDA);
+		Autobus turismoIgual = Turismo.getVehiculoConMatricula(MATRICULA_VALIDA);
 		assertEquals(turismo, turismo);
 		assertEquals(turismo, turismoIgual);
 		assertEquals(turismoIgual, turismo);
 		assertEquals(turismo.hashCode(), turismoIgual.hashCode());
-		Vehiculo turismoDiferente = new Turismo(MARCA_VALIDA, MODELO_VALIDO, CILINDRADA_VALIDA, "1111BBB");
+		Autobus turismoDiferente = new Turismo(MARCA_VALIDA, MODELO_VALIDO, CILINDRADA_VALIDA, "1111BBB");
 		assertNotEquals(turismo, "");
 		assertNotEquals(turismo, turismoDiferente);
 		assertNotEquals(turismo.hashCode(), turismoDiferente.hashCode());

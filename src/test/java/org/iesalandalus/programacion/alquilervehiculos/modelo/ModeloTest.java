@@ -16,6 +16,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 import org.iesalandalus.programacion.alquilervehiculos.modelo.dominio.Alquiler;
+import org.iesalandalus.programacion.alquilervehiculos.modelo.dominio.Autobus;
 import org.iesalandalus.programacion.alquilervehiculos.modelo.dominio.Cliente;
 import org.iesalandalus.programacion.alquilervehiculos.modelo.dominio.Turismo;
 import org.iesalandalus.programacion.alquilervehiculos.modelo.dominio.Vehiculo;
@@ -148,7 +149,7 @@ public class ModeloTest {
 	@Test
 	void buscarVehiculoLlamaVehiculosBuscar() {
 		assertDoesNotThrow(() -> modelo.insertar(turismo));
-		Vehiculo vehiculoBuscado = modelo.buscar(turismo);
+		Autobus vehiculoBuscado = modelo.buscar(turismo);
 		verify(vehiculos).buscar(turismo);
 		assertNotSame(turismo, vehiculoBuscado);
 	}

@@ -1,6 +1,6 @@
 package org.iesalandalus.programacion.alquilervehiculos.modelo.dominio;
 
-public class Turismo extends Vehiculo {
+public abstract class Turismo extends Vehiculo {
 	private int cilindrada;
 	public Turismo(String marca, String modelo, int cilindrada, String matricula) throws IllegalArgumentException {
 		super(marca,modelo,matricula);
@@ -32,8 +32,7 @@ public class Turismo extends Vehiculo {
 	}
 
 	public String toString() {
-		return "Turismo [marca=" + marca + ", modelo=" + modelo + ", cilindrada=" + cilindrada + ", matricula="
-				+ matricula + ", getMarca()=" + getMarca() + ", getModelo()=" + getModelo() + ", getCilindrada()="
+		return "Turismo [cilindrada=" + cilindrada + ", getMarca()=" + getMarca() + ", getModelo()=" + getModelo() + ", getCilindrada()="
 				+ getCilindrada() + ", getMatricula()=" + getMatricula() + ", hashCode()=" + hashCode()
 				+ ", getPrecioDiario()=" + getPrecioDiario() + ", getClass()=" + getClass() + ", toString()="
 				+ super.toString() + "]";

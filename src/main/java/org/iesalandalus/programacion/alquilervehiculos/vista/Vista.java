@@ -4,8 +4,8 @@ import javax.naming.OperationNotSupportedException;
 
 import org.iesalandalus.programacion.alquilervehiculos.controlador.Controlador;
 import org.iesalandalus.programacion.alquilervehiculos.modelo.dominio.Alquiler;
+import org.iesalandalus.programacion.alquilervehiculos.modelo.dominio.Autobus;
 import org.iesalandalus.programacion.alquilervehiculos.modelo.dominio.Cliente;
-import org.iesalandalus.programacion.alquilervehiculos.modelo.dominio.Vehiculo;
 import org.iesalandalus.programacion.alquilervehiculos.vista.Consola;
 import org.iesalandalus.programacion.alquilervehiculos.vista.Opcion;
 
@@ -227,7 +227,7 @@ public class Vista {
 	private void listarTurismos() {
 		Consola.mostrarCabecera("LISTAR TURISMOS");
 		try {
-			for (Vehiculo turismo : controlador.getTurismos()) {
+			for (Autobus turismo : controlador.getTurismos()) {
 				System.out.printf("%s%n", turismo);
 			}
 			System.out.printf("IMPORTANTE: Se han listado los turismos válidamente");

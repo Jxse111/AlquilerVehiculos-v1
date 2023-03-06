@@ -7,9 +7,9 @@ import javax.naming.OperationNotSupportedException;
 
 import org.iesalandalus.programacion.alquilervehiculos.modelo.Modelo;
 import org.iesalandalus.programacion.alquilervehiculos.modelo.dominio.Alquiler;
+import org.iesalandalus.programacion.alquilervehiculos.modelo.dominio.Autobus;
 import org.iesalandalus.programacion.alquilervehiculos.modelo.dominio.Cliente;
 import org.iesalandalus.programacion.alquilervehiculos.modelo.dominio.Turismo;
-import org.iesalandalus.programacion.alquilervehiculos.modelo.dominio.Vehiculo;
 import org.iesalandalus.programacion.alquilervehiculos.vista.Vista;
 
 public class Controlador {
@@ -58,7 +58,7 @@ public class Controlador {
 		return modelo.buscar(cliente);
 	}
 
-	public Vehiculo buscar(Turismo turismo) {
+	public Autobus buscar(Turismo turismo) {
 		return modelo.buscar(turismo);
 	}
 
@@ -78,7 +78,7 @@ public class Controlador {
 		modelo.borrar(cliente);
 	}
 
-	public void borrar(Vehiculo turismo) throws OperationNotSupportedException {
+	public void borrar(Autobus turismo) throws OperationNotSupportedException {
 		modelo.borrar(turismo);
 	}
 
@@ -102,7 +102,7 @@ public class Controlador {
 		return modelo.getAlquileres(cliente);
 	}
 
-	public List<Alquiler> getAlquileres(Vehiculo turismo) {
+	public List<Alquiler> getAlquileres(Autobus turismo) {
 		return modelo.getAlquileres(turismo);
 	}
 

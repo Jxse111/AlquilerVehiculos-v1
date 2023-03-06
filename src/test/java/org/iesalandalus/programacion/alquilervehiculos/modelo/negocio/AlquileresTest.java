@@ -15,6 +15,7 @@ import java.util.List;
 import javax.naming.OperationNotSupportedException;
 
 import org.iesalandalus.programacion.alquilervehiculos.modelo.dominio.Alquiler;
+import org.iesalandalus.programacion.alquilervehiculos.modelo.dominio.Autobus;
 import org.iesalandalus.programacion.alquilervehiculos.modelo.dominio.Cliente;
 import org.iesalandalus.programacion.alquilervehiculos.modelo.dominio.Vehiculo;
 import org.iesalandalus.programacion.alquilervehiculos.modelo.negocio.memoria.Alquileres;
@@ -230,7 +231,7 @@ public class AlquileresTest {
 	@Test
 	void devolverVehiculoNuloLanzaExcepcion() {
 		assertDoesNotThrow(() -> alquileres.insertar(alquiler1));
-		Vehiculo vehiculo = null;
+		Autobus vehiculo = null;
 		NullPointerException npe = assertThrows(NullPointerException.class, () -> alquileres.devolver(vehiculo, ayer));
 		assertEquals(MENSAJE_ERROR_DEVOLVER_VEHICULO_NULO, npe.getMessage());
 	}
