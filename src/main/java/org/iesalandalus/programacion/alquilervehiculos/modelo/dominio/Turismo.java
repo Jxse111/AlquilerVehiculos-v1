@@ -3,7 +3,7 @@ package org.iesalandalus.programacion.alquilervehiculos.modelo.dominio;
 public abstract class Turismo extends Vehiculo {
 	private int cilindrada;
 	public Turismo(String marca, String modelo, int cilindrada, String matricula) throws IllegalArgumentException {
-		super(marca,modelo,matricula);
+		super(marca,modelo,cilindrada, matricula);
 		setCilindrada(cilindrada);
 		
 	}

@@ -1,11 +1,11 @@
 package org.iesalandalus.programacion.alquilervehiculos.modelo.dominio;
 
 public abstract class Autobus {
-private int FACTOR_PLAZAS;
+private int FACTOR_PLAZAS=2;
 private int plazas;
 
 public Autobus(String marca,String modelo,int plazas,String matricula) {
-super(marca,modelo,matricula);
+super();
 setPlazas(plazas);
 }
 
@@ -16,5 +16,8 @@ public int getPlazas() {
 public void setPlazas(int plazas) {
 	this.plazas = plazas;
 }
+public int getFactorPrecio() {
+return FACTOR_PLAZAS/plazas;
 
+}
 }

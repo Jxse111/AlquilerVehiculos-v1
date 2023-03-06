@@ -2,43 +2,53 @@ package org.iesalandalus.programacion.alquilervehiculos.modelo.dominio;
 
 import java.util.Objects;
 
-public abstract class Vehiculo {
-
+public abstract class Vehiculo extends Autobus {
 	private static final String ER_MARCA = "(Seat|Land Rover|KIA|Rolls-Royce|SsangYong)";
 	private static final String ER_MATRICULA = "[0-9]{4}[BCDFGHJKLMNÑPQRSTVWXYZ]{3}";
-	protected String marca;
-	protected String modelo;
-	protected String matricula;
+	private String marca;
+	private String modelo;
+	private String matricula;
+
+	public Vehiculo(String marca, String modelo, int plazas, String matricula) {
+		super(marca, modelo, plazas, matricula);
+	}
 
 	public static Turismo getTurismoConMatricula(String matricula) {
 		return new Turismo("Seat", "León", 90, matricula);
-
 	}
 
-	public String getMarca() {}
-
-	public void setMarca(String marca) throws IllegalArgumentException {
+	public String getMarca() {
+		return marca;
+		}
+	public void setMarca() {	
 		if (marca == null) {
 			throw new NullPointerException("ERROR: la marca no puede ser nula.");
+			}
 		}
-	}
-	
 
 	public String getModelo() {
+		return modelo;
+	
+	}
+	
+	
+	public void setModelo(String matricula) throws IllegalArgumentException {
+		throw new IllegalArgumentException("Matrícula no tiene un formato válido");
+
+	}
 
 	public void setMatricula(String matricula) throws IllegalArgumentException {
 		throw new IllegalArgumentException("Matrícula no tiene un formato válido");
 	}
-	
-	}
 
-	public abstract double getFactorPrecio();
+	public abstract int getFactorPrecio();
 
 	@Override
 	public int hashCode() {
 		return matricula.hashCode();
 	}
 
+	@Override
 	public boolean equals(Object obj) {
 		if (this == obj)
 			return true;
@@ -48,4 +58,4 @@ public abstract class Vehiculo {
 		return Objects.equals(marca, other.marca) && Objects.equals(matricula, other.matricula)
 				&& Objects.equals(modelo, other.modelo);
 	}
-	}
+}
